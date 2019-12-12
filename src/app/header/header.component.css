@@ -72,3 +72,11 @@ input {
 .input{
     padding-right: 57px;
 }
+
+.toggle-side-nav {
+    padding-left: 30px;
+    padding-right: 20px;
+    cursor: pointer;
+    font-size: 49px;
+    line-height: 30px;
+}

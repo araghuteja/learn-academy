@@ -1,1 +1,16 @@
-<app-header></app-header>
+<app-header (toggleSideNav)="toggleSideNav()"></app-header>
+<div>
+    <mat-sidenav-container style="height: 100vh;" class="example-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+        Sidenav content
+    </mat-sidenav>
+
+    <mat-sidenav-content style="height: 100%;">
+        <mat-tab-group>
+            <mat-tab label="Subjects"> Subjects </mat-tab>
+            <mat-tab label="Discussions"> Discussions </mat-tab>
+            <mat-tab label="My Dashboard"> My Dashboard </mat-tab>
+        </mat-tab-group>
+    </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

@@ -1,0 +1,13 @@
+/* Styles for tab labels */
+.mat-tab-label {
+    min-width: 20px !important;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+    min-width: 22px !important;
+    font-size: 18px;
+    font-weight: 700;
+}

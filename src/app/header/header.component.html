@@ -2,10 +2,12 @@
         <mat-toolbar color="primary">
             <img class="img-responsive" src="../../assets/logo_white.png">
 
+            <mat-icon class="toggle-side-nav" (click)="emitToggleSideNav()">menu</mat-icon>
+
             <div class="wrapper">
-                    <input type="text" class="input" placeholder="Search Videos">
-                    <mat-icon class="icon">search</mat-icon>
-                 </div>
+                <input type="text" class="input" placeholder="Search Videos">
+                <mat-icon class="icon">search</mat-icon>
+            </div>
             
             <span class="example-spacer"></span>
             <span flex></span>
