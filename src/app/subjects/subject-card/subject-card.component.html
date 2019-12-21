@@ -1,50 +1,78 @@
-<svg height="500" width="500">
+<div>
+    <svg transform="scale(0.7) translate(-90,-70)" height="500" width="500">
 
-    <defs>
-        <!-- Semi Circle Fill control -->
-        <clipPath id="cut-off-mask">
-            <!-- Increase 'y' to mask arc :: 450 to 50 -->
-            <rect x="100"[attr.y]="setMaskValueBasedOnPercentage()" width="500" height="500" />  
-        </clipPath>
-        <clipPath id="cut-off-fixed">
-            <rect x="100" y="50" width="500" height="500" />  
-        </clipPath>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style="stop-color:#0000ff;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#1a3aa1;stop-opacity:1" />
-        </linearGradient>
-    </defs>
+        <defs>
+            <!-- Semi Circle Fill control -->
+            <clipPath id="cut-off-mask">
+                <!-- Increase 'y' to mask arc :: 450 to 50 -->
+                <rect x="100" [attr.y]="setMaskValueBasedOnPercentage()" width="500" height="500" />
+            </clipPath>
+            <clipPath id="cut-off-fixed">
+                <rect x="100" y="50" width="500" height="500" />
+            </clipPath>
+            <clipPath id="circleView">
+                <circle cx="100" cy="60" r="44" fill="#FFFFFF" />            
+            </clipPath>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" [style.stop-color]="primaryColor" style="stop-opacity:1" />
+                <stop offset="100%" [style.stop-color]="secondaryColor" style="stop-opacity:1" />
+            </linearGradient>
+        </defs>
 
-    <!-- Semi Circle -->
-    <circle cx="100" cy="250" r="200" clip-path="url(#cut-off-fixed)" fill='transparent' 
-    [attr.stroke]='primaryColor' stroke-width="12" />
+        <!-- Semi Circle -->
+        <circle cx="100" cy="250" r="200" clip-path="url(#cut-off-fixed)" fill='transparent'
+            [attr.stroke]='primaryColor' stroke-width="12" />
 
-    <!-- Semi Circle based on Fill -->
-    <circle cx="100" cy="250" r="200" clip-path="url(#cut-off-mask)" fill='transparent' 
-    [attr.stroke]='secondaryColor' stroke-width="12" />
+        <!-- Semi Circle based on Fill -->
+        <circle cx="100" cy="250" r="200" clip-path="url(#cut-off-mask)" fill='transparent'
+            [attr.stroke]='secondaryColor' stroke-width="12" />
 
-    <!-- Logo Circle -->
-    <circle cx="100" cy="60" r="50" stroke="url(#grad1)" stroke-width="12" fill="white" />
+        <!-- Logo Circle -->
+        <circle cx="100" cy="60" r="50" stroke="url(#grad1)" stroke-width="12" fill="white" />
+        <image x="15" y="20" width="170" height="80" 
+            href="../../../assets/subjects/enginerring_mathematics.jpg" 
+            clip-path="url(#circleView)" />
 
-    <!-- Author Text -->
-    <text x="60" y="150" id="author" ><tspan font-size="larger" font-weight="600" fill="black" >{{author}}</tspan></text>
+        <!-- Videos Count -->
+        <rect x="180" width="80" height="40" rx="20" ry="20" fill="none" stroke="black" />
+        <text id="videosCoumt" y="24" x ="190" fill="black">
+            {{videosCount}}
+        </text>
+        <path transform="scale(0.08) translate(2800,50)" d="M339.11,83.031L270,121.773V87c0-9.374-7.626-17-17-17H17C7.626,70,0,77.626,0,87v174c0,9.374,7.626,17,17,17h236
+        c9.374,0,17-7.626,17-17v-33.948l69.11,38.753c4.797,2.69,8.89,0.392,8.89-5.108V88.14C348,82.64,343.907,80.341,339.11,83.031z
+        M186.723,185.882l-75.4,51.995C106.796,241,103,239.056,103,233.556V126.851c0-5.5,3.796-7.445,8.323-4.322l75.423,51.996
+        C191.273,177.648,191.25,182.759,186.723,185.882z"/>
 
-    <!-- Title Text -->
-    <text x="40" y="230" id="title"  class="wrap" >
-        <tspan *ngFor="let word of title; let i = index" x="40" [attr.dy]="i*45" font-size="50" font-weight="600" fill="black" >{{word}}</tspan>
-    </text>
+        <!-- Author Text -->
+        <text id="author" x="60" y="150" font-size="larger" font-weight="550" fill="black">
+            {{author}}
+        </text>
+
+        <!-- Title Text -->
+        <text x="40" y="230" id="title" class="wrap">
+            <tspan *ngFor="let word of title; let i = index" x="40" [attr.dy]="i*45" font-size="50" font-weight="600"
+                fill="url(#grad1)">{{word}}</tspan>
+        </text>
 
 
-    <!-- Clock -->
-    <g>
-        <svg  x="40" y="350" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/></svg>
-        <rect  x="30" y="335" rx="20" ry="20" width="200" height="50" fill="transparent" stroke="black" />
-    </g>
-    <!-- Percentage Circle -->
-    <circle cx="100" cy="450" r="30" [attr.fill]='secondaryColor' />
+        <!-- Clock -->
+        <g>
+            <svg x="35" y="346" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" /></svg>
+            <rect x="30" y="338" rx="10" ry="10" width="160" height="40" fill="transparent" stroke="black" />
+            <text x="65" y="365" font-size="large">
+                <tspan fill="black">{{subjectDuration.hours}} : {{subjectDuration.minutes}} : {{subjectDuration.seconds}} hrs</tspan>
+            </text>
+        </g>
+        <!-- Percentage Circle -->
+        <circle cx="100" cy="450" r="30" fill='url(#grad1)' />
 
-    <!-- Actual Percentage Text -->
-    <text x="85" y="455" ><tspan font-size="large" font-weight="bold" fill="white" >{{completionPercentage}}%</tspan></text>
-</svg>
+
+        <!-- Actual Percentage Text -->
+        <text x="85" y="455">
+            <tspan font-size="large" font-weight="bold" fill="white">{{completionPercentage}}%</tspan>
+        </text>
+    </svg>
+</div>
