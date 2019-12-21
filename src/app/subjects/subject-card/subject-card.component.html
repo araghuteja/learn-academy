@@ -14,18 +14,18 @@
                 <circle cx="100" cy="60" r="44" fill="#FFFFFF" />            
             </clipPath>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" [style.stop-color]="primaryColor" style="stop-opacity:1" />
-                <stop offset="100%" [style.stop-color]="secondaryColor" style="stop-opacity:1" />
+                <stop offset="0%" [style.stop-color]="subject.primaryColor" style="stop-opacity:1" />
+                <stop offset="100%" [style.stop-color]="subject.secondaryColor" style="stop-opacity:1" />
             </linearGradient>
         </defs>
 
         <!-- Semi Circle -->
         <circle cx="100" cy="250" r="200" clip-path="url(#cut-off-fixed)" fill='transparent'
-            [attr.stroke]='primaryColor' stroke-width="12" />
+            [attr.stroke]='subject.primaryColor' stroke-width="12" />
 
         <!-- Semi Circle based on Fill -->
         <circle cx="100" cy="250" r="200" clip-path="url(#cut-off-mask)" fill='transparent'
-            [attr.stroke]='secondaryColor' stroke-width="12" />
+            [attr.stroke]='subject.secondaryColor' stroke-width="12" />
 
         <!-- Logo Circle -->
         <circle cx="100" cy="60" r="50" stroke="url(#grad1)" stroke-width="12" fill="white" />
@@ -36,7 +36,7 @@
         <!-- Videos Count -->
         <rect x="180" width="80" height="40" rx="20" ry="20" fill="none" stroke="black" />
         <text id="videosCoumt" y="24" x ="190" fill="black">
-            {{videosCount}}
+            {{subject.videosCount}}
         </text>
         <path transform="scale(0.08) translate(2800,50)" d="M339.11,83.031L270,121.773V87c0-9.374-7.626-17-17-17H17C7.626,70,0,77.626,0,87v174c0,9.374,7.626,17,17,17h236
         c9.374,0,17-7.626,17-17v-33.948l69.11,38.753c4.797,2.69,8.89,0.392,8.89-5.108V88.14C348,82.64,343.907,80.341,339.11,83.031z
@@ -45,12 +45,12 @@
 
         <!-- Author Text -->
         <text id="author" x="60" y="150" font-size="larger" font-weight="550" fill="black">
-            {{author}}
+            {{subject.author}}
         </text>
 
         <!-- Title Text -->
         <text x="40" y="230" id="title" class="wrap">
-            <tspan *ngFor="let word of title; let i = index" x="40" [attr.dy]="i*45" font-size="50" font-weight="600"
+            <tspan *ngFor="let word of subject.title; let i = index" x="40" [attr.dy]="i*45" font-size="50" font-weight="600"
                 fill="url(#grad1)">{{word}}</tspan>
         </text>
 
@@ -63,7 +63,7 @@
                 <polyline points="12 6 12 12 16 14" /></svg>
             <rect x="30" y="338" rx="10" ry="10" width="160" height="40" fill="transparent" stroke="black" />
             <text x="65" y="365" font-size="large">
-                <tspan fill="black">{{subjectDuration.hours}} : {{subjectDuration.minutes}} : {{subjectDuration.seconds}} hrs</tspan>
+                <tspan fill="black">{{subject.subjectDuration.hours}} : {{subject.subjectDuration.minutes}} : {{subject.subjectDuration.seconds}} hrs</tspan>
             </text>
         </g>
         <!-- Percentage Circle -->
@@ -72,7 +72,7 @@
 
         <!-- Actual Percentage Text -->
         <text x="85" y="455">
-            <tspan font-size="large" font-weight="bold" fill="white">{{completionPercentage}}%</tspan>
+            <tspan font-size="large" font-weight="bold" fill="white">{{subject.completionPercentage}}%</tspan>
         </text>
     </svg>
 </div>

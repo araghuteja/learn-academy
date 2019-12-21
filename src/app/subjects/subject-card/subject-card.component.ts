@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Subject } from 'src/shared/models/subject.model';
 
 @Component({
   selector: 'app-subject-card',
@@ -7,26 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubjectCardComponent implements OnInit {
 
-
-  completionPercentage: number = 90;
-  author: string = 'Shishir Das';
-  title: string[] = ['Analog', 'Electronics'];
-  videosCount: number = 175;
-
-  subjectDuration = {
-    hours: 63,
-    minutes: 32,
-    seconds: 22
-  }
-
-  primaryColor: string = "purple";
-  secondaryColor: string = "#1a3aa1";
+  @Input() subject: Subject;
 
   constructor() { 
   }
 
   setMaskValueBasedOnPercentage () {
-    return 450 - Math.round( 400 * this.completionPercentage / 100);
+    return 450 - Math.round( 400 * this.subject.completionPercentage / 100);
   }
 
   ngOnInit() {   
