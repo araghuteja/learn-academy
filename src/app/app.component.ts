@@ -10,8 +10,9 @@ export class AppComponent {
 
   title = 'learn-academy';
   opened: boolean;
-  expandHeight = '42px';
-  collapseHeight = '42px';
+  expandHeight = '50px';
+  collapseHeight = '50px';
+  displayMode = 'flat';
 
   toggleSideNav() {
     this.opened = !this.opened;

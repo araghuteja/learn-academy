@@ -12,13 +12,13 @@
 }
 
 .icon-right {
-   font-size: x-large;
-   padding: 10px; 
+   font-size: 35px;
+   padding: 2px 20px; 
 }
 
 .mat-badge-medium.mat-badge-above .mat-badge-content {
     right: 2px;
-    top: 2px;
+    top: -5px;
     background: none;
 }
 
@@ -26,8 +26,8 @@
     height: auto;
     width: auto;
     padding: 8px 0px;
-    max-height: 30px;
-    max-width: 150px;
+    max-height: 49px;
+    max-width: 250px;
 }
 
 input {
@@ -40,7 +40,7 @@ input {
     border: 1px solid white;
     background: transparent;
     width: 200px;
-    height: 25px;    
+    height: 35px;    
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -66,8 +66,8 @@ input {
     width: 40px;
     position: relative;
     right: 290px;
-    font-size: 25px;
-    line-height: 37px;
+    font-size: 28px;
+    line-height: 42px;
     cursor: pointer;
     z-index: 1;
 }
