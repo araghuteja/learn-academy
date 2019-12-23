@@ -1,19 +1,89 @@
 <app-header (toggleSideNav)="toggleSideNav()"></app-header>
 <div>
-    <mat-sidenav-container style="height: 100vh;" class="example-container">
-    <mat-sidenav #sidenav mode="side" [(opened)]="opened">
-        Sidenav content
-    </mat-sidenav>
+    <mat-sidenav-container class="example-container">
+        <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+            <mat-accordion multi="true" [displayMode]="displayMode">
+                <mat-expansion-panel class="no-shadow" [hideToggle]="true" style="pointer-events: none">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title style="font-weight: bold;">
+                            MENU
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="no-shadow" [expanded]="true">
+                    <mat-expansion-panel-header fxLayout="row" [expandedHeight]="expandHeight"
+                        [collapsedHeight]="collapseHeight">
+                        <mat-panel-title>
+                            VIDEO LINKS
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list class="ml-0" dense>
+                        <mat-list-item>
+                            <a href="#">Bookmarked Videos</a>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <a href="#">Completed Videos</a>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <a href="#">Notes</a>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <a href="#">PDFs</a>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <a href="#">Videos History</a>
+                        </mat-list-item>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="no-shadow my-0" [expanded]="true">
+                    <mat-expansion-panel-header fxLayout="row" [expandedHeight]="expandHeight"
+                        [collapsedHeight]="collapseHeight">
+                        <mat-panel-title>
+                            DISCUSSION LINKS
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list class="ml-0" dense>
+                        <mat-list-item>
+                            <a href="#">Doubts</a>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <a href="#">Answered Doubts</a>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <a href="#">Bookmarked Doubts</a>
+                        </mat-list-item>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel class="no-shadow my-0" [expanded]="true">
+                    <mat-expansion-panel-header fxLayout="row" [expandedHeight]="expandHeight"
+                        [collapsedHeight]="collapseHeight">
+                        <mat-panel-title>
+                            OTHER LINKS
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-nav-list class="ml-0" dense>
+                        <mat-list-item>
+                            <a href="#">My Downloads</a>
+                        </mat-list-item>
+                        <mat-list-item>
+                            <a href="#">My Profile</a>
+                        </mat-list-item>
+                    </mat-nav-list>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-sidenav>
 
-    <mat-sidenav-content style="height: 100%;">
-        <mat-tab-group>
-            <mat-tab label="Subjects"> 
-                <div> 
-                    <app-subjects></app-subjects>
-                </div> </mat-tab>
-            <mat-tab label="Discussions"> Discussions </mat-tab>
-            <mat-tab label="My Dashboard"> My Dashboard </mat-tab>
-        </mat-tab-group>
-    </mat-sidenav-content>
+        <mat-sidenav-content>
+            <mat-tab-group style="height: 100vh;">
+                <mat-tab label="Subjects">
+                    <div>
+                        <app-subjects></app-subjects>
+                        <app-subjects></app-subjects>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Discussions"> Discussions </mat-tab>
+                <mat-tab label="My Dashboard"> My Dashboard </mat-tab>
+            </mat-tab-group>
+        </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

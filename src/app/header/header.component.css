@@ -1,5 +1,6 @@
 .mat-toolbar {
     background: #1d72dd;
+    height: auto;
 }
 
 .mat-toolbar img {
@@ -24,20 +25,22 @@
 .img-responsive {
     height: auto;
     width: auto;
-    max-height: 49px;
-    max-width: 250px;
+    padding: 8px 0px;
+    max-height: 30px;
+    max-width: 150px;
 }
 
 input {
     border-radius: 10px;
     font-size: 20px;
-    margin-left: 30px;
-    padding-left: 50px;
+    margin-left: 20px;
+    margin-top: 3px;
+    padding-left: 40px;
     color: white;
-    border: 2px solid white;
+    border: 1px solid white;
     background: transparent;
     width: 200px;
-    height: 30px;    
+    height: 25px;    
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -62,8 +65,8 @@ input {
 .icon{
     width: 40px;
     position: relative;
-    right: 305px;
-    font-size: 30px;
+    right: 290px;
+    font-size: 25px;
     line-height: 37px;
     cursor: pointer;
     z-index: 1;
@@ -77,6 +80,6 @@ input {
     padding-left: 30px;
     padding-right: 20px;
     cursor: pointer;
-    font-size: 49px;
+    font-size: 30px;
     line-height: 30px;
 }

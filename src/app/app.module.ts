@@ -15,6 +15,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { SubjectCardComponent } from './subjects/subject-card/subject-card.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatBadgeModule,
     MatFormFieldModule,
     MatTabsModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatListModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

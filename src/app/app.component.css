@@ -1,13 +1,32 @@
+body, html{
+    height: 100%;
+    margin: 0;
+  }
+
 /* Styles for tab labels */
 .mat-tab-label {
     min-width: 20px !important;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
 }
 
 /* Styles for the active tab label */
 .mat-tab-label.mat-tab-label-active {
     min-width: 22px !important;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
 }
+
+.mat-tab-label, .mat-tab-label-active{
+    min-width: 0!important;
+    margin-top: 3px!important;
+    margin-bottom: 3px!important;
+    max-height: 24px;
+   }
+
+  
+  ::ng-deep .mat-expansion-panel-body {
+    padding: 0px !important;
+    padding-left: 10px !important;
+  }
+  
